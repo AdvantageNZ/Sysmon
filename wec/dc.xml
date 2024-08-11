@@ -23,7 +23,7 @@
 	<TransportName>HTTP</TransportName>
 	<ContentFormat>RenderedText</ContentFormat>
 	<Locale Language="en-NZ"/>
-	<LogFile>ADV-WEC-AD</LogFile>
+	<LogFile>Adv-DC</LogFile>
 	<PublisherName></PublisherName>
 	<AllowedSourceNonDomainComputers></AllowedSourceNonDomainComputers>
 	<AllowedSourceDomainComputers>O:NSG:BAD:P(A;;GA;;;DD)S:</AllowedSourceDomainComputers>

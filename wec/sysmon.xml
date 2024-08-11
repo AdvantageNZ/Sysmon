@@ -23,7 +23,7 @@
 	<TransportName>HTTP</TransportName>
 	<ContentFormat>RenderedText</ContentFormat>
 	<Locale Language="en-NZ"/>
-	<LogFile>ADV-WEC-Sysmon</LogFile>
+	<LogFile>Adv-Sysmon</LogFile>
 	<PublisherName></PublisherName>
 	<AllowedSourceNonDomainComputers>
 		<AllowedIssuerCAList>
