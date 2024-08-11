@@ -2,35 +2,13 @@
 <instrumentationManifest xsi:schemaLocation="http://schemas.microsoft.com/win/2004/08/events eventman.xsd" xmlns="http://schemas.microsoft.com/win/2004/08/events" xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:trace="http://schemas.microsoft.com/win/2004/08/events/trace">
 	<instrumentation>
 		<events>
-			<provider name="ADV_WEF" guid="{BF4B0C66-D5CD-49C2-AC20-6A6994E12CF0}" symbol="ADV_WEF" resourceFileName="C:\Windows\System32\ADV_WEF.dll" messageFileName="C:\Windows\System32\ADV_WEFs.dll">
-				<events>
-					<event symbol="WEF_Event" value="6969" version="0" channel="ADV-WEF-AD" template="WEF-Template" keywords="win:AuditSuccess win:AuditFailure " message="$(string.ADV_WEF.event.6969.message)"></event>
-				</events>
+			<provider name="Adv-Wef" guid="{0422E0F8-6380-4CFF-B273-0D279992F1E9}" symbol="Adv_Wef">
 				<channels>
-					<channel name="ADV-WEF-AD" chid="ADV-WEF-AD" symbol="ADV_WEF_AD" type="Operational" enabled="true" message="$(string.ADV_WEF.channel.ADV_WEF_AD.message)"></channel>
-					<channel name="ADV-WEF-PowerShell" chid="ADV-WEF-PowerShell" symbol="ADV_WEF_PowerShell" type="Operational" enabled="true" message="$(string.ADV_WEF.channel.ADV_WEF_PowerShell.message)"></channel>
-					<channel name="ADV-WEF-Sysmon" chid="ADV-WEF-Sysmon" symbol="ADV_WEF_Sysmon" type="Operational" enabled="true" message="$(string.ADV_WEF.channel.ADV_WEF_Sysmon.message)"></channel>
+					<channel name="Adv-Sysmon" chid="Adv-Sysmon" symbol="Adv_Sysmon" type="Operational" enabled="true"></channel>
+					<channel name="Adv-PowerShell" chid="Adv-PowerShell" symbol="Adv_PowerShell" type="Operational" enabled="true"></channel>
+					<channel name="Adv-DC" chid="Adv-DC" symbol="Adv_DC" type="Operational" enabled="true"></channel>
 				</channels>
-				<keywords></keywords>
-				<templates>
-					<template tid="WEF-Template">
-						<data name="Unicode" inType="win:UnicodeString" outType="xs:string"></data>
-						<data name="UInt32" inType="win:UInt32" outType="xs:unsignedInt"></data>
-					</template>
-				</templates>
 			</provider>
 		</events>
 	</instrumentation>
-	<localization>
-		<resources culture="en-US">
-			<stringTable>
-				<string id="keyword.AuditSuccess" value="Audit Success"></string>
-				<string id="keyword.AuditFailure" value="Audit Failure"></string>
-				<string id="ADV_WEF.event.6969.message" value="$(string.WEF-Events.event.6969.message)"></string>
-				<string id="ADV_WEF.channel.ADV_WEF_Sysmon.message" value="ADV_WEF_Sysmon"></string>
-				<string id="ADV_WEF.channel.ADV_WEF_PowerShell.message" value="ADV_WEF_PowerShell"></string>
-				<string id="ADV_WEF.channel.ADV_WEF_AD.message" value="ADV_WEF_AD"></string>
-			</stringTable>
-		</resources>
-	</localization>
 </instrumentationManifest>
