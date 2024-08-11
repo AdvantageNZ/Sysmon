@@ -23,7 +23,7 @@
 	<TransportName>HTTP</TransportName>
 	<ContentFormat>RenderedText</ContentFormat>
 	<Locale Language="en-NZ"/>
-	<LogFile>ADV-WEC-Powershell</LogFile>
+	<LogFile>Adv-PowerShell</LogFile>
 	<PublisherName>Microsoft-Windows-EventCollector</PublisherName>
 	<AllowedSourceNonDomainComputers>
 		<AllowedIssuerCAList>
