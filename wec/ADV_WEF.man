@@ -2,13 +2,32 @@
 <instrumentationManifest xsi:schemaLocation="http://schemas.microsoft.com/win/2004/08/events eventman.xsd" xmlns="http://schemas.microsoft.com/win/2004/08/events" xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:trace="http://schemas.microsoft.com/win/2004/08/events/trace">
 	<instrumentation>
 		<events>
-			<provider name="Adv-Wef" guid="{0422E0F8-6380-4CFF-B273-0D279992F1E9}" symbol="Adv_Wef">
+			<provider name="Adv-WEF" guid="{4AF80939-3E40-4584-A9AC-7EEF2A9E7E89}" symbol="Adv_WEF" resourceFileName="C:\Windows\System32\Adv-WEF.dll" messageFileName="C:\Windows\System32\Adv-WEF.dll">
+				<events>
+					<event symbol="WEF_Event" value="6969" version="0" channel="Adv-AD" template="WEF-Template" keywords="win:AuditSuccess win:AuditFailure " message="$(string.Adv-WEF.event.6969.message)"></event>
+				</events>
 				<channels>
-					<channel name="Adv-Sysmon" chid="Adv-Sysmon" symbol="Adv_Sysmon" type="Operational" enabled="true"></channel>
+					<channel name="Adv-AD" chid="Adv-AD" symbol="Adv_AD" type="Operational" enabled="true"></channel>
 					<channel name="Adv-PowerShell" chid="Adv-PowerShell" symbol="Adv_PowerShell" type="Operational" enabled="true"></channel>
-					<channel name="Adv-DC" chid="Adv-DC" symbol="Adv_DC" type="Operational" enabled="true"></channel>
+					<channel name="Adv-Sysmon" chid="Adv-Sysmon" symbol="Adv_Sysmon" type="Operational" enabled="true"></channel>
 				</channels>
+				<keywords></keywords>
+				<templates>
+					<template tid="WEF-Template">
+						<data name="Unicode" inType="win:UnicodeString" outType="xs:string"></data>
+						<data name="UInt32" inType="win:UInt32" outType="xs:unsignedInt"></data>
+					</template>
+				</templates>
 			</provider>
 		</events>
 	</instrumentation>
+	<localization>
+		<resources culture="en-US">
+			<stringTable>
+				<string id="keyword.AuditSuccess" value="Audit Success"></string>
+				<string id="keyword.AuditFailure" value="Audit Failure"></string>
+				<string id="Adv-WEF.event.6969.message" value="$(string.WEF-Events.event.6969.message)"></string>
+			</stringTable>
+		</resources>
+	</localization>
 </instrumentationManifest>
