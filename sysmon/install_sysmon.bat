@@ -1,5 +1,5 @@
 @ECHO off
-:: Script to install or update sysmon. Inside the network source installation folder should be a es_sysmon_version.txt
+:: Script to configure WinRM and install or update sysmon. Inside the network source installation folder should be a es_sysmon_version.txt
 :: Version number format: XX.XX.XXX Example: 13.00.000. First 4 digits are Sysmon version, the last 3 digits is your internal configuration
 :: versioning. Increment this number for force new configuration apply to sysmon installations.
 :: If files does not exist, script wont update Sysmon
@@ -15,6 +15,15 @@ set _tempy=%systemroot%\temp
 :: Uncomment next line and specify IP, Share, Username and Password if you want to specify user access
 :: net use \\%_server%%share% /d
 :: net use \\%_server%%share%
+REM Check if WinRM service is running
+sc query winrm | find "RUNNING"
+IF %ERRORLEVEL% NEQ 0 ( 
+    REM WinRM service is not running, configure it
+    echo WinRM service is not running. Configuring WinRM...
+    winrm quickconfig -q -force
+) ELSE (
+    echo WinRM service is already running.
+)
 :: Check if Sysmon service is installed
 sc.exe qc Sysmon 2> nul >nul
 IF %ERRORLEVEL% == 0 (
